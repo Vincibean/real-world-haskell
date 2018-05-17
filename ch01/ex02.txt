@@ -1,0 +1,1 @@
+From ghci, type :? to print some help. Define a variable, such as let x = 1, and then type :show bindings. What do you see?
