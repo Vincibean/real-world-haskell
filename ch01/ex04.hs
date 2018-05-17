@@ -1,0 +1,1 @@
+-- Modify the WC.hs example again, in order to print the number of characters in a file.
