@@ -1,16 +1,46 @@
 Enter the following expressions into ghci. What are their types?
 • 5 + 8
+    5 + 8 :: Num a => a
+    13 :: Num a => a
 • 3 * 5 + 8
+    3 * 5 + 8 :: Num a => a
+    23 :: Num a => a
 • 2 + 4
+    2 + 4 :: Num a => a
+    6 :: Num a => a
 • (+) 2 4
+    (+) 2 4 :: Num a => a
+    6 :: Num a => a
 • sqrt 16
+    sqrt 16 :: Floating a => a
+    4.0 :: Floating a => a
 • succ 6
+    succ 6 :: (Num a, Enum a) => a
+    7 :: (Num a, Enum a) => a
 • succ 7
+    succ 7 :: (Num a, Enum a) => a
+    8 :: (Num a, Enum a) => a
 • pred 9
+    pred 9 :: (Num a, Enum a) => a
+    8 :: (Num a, Enum a) => a
 • pred 8
+    pred 8 :: (Num a, Enum a) => a
+    7 :: (Num a, Enum a) => a
 • sin (pi / 2)
+    sin (pi / 2) :: Floating a => a
+    1.0 :: Floating a => a
 • truncate pi
+    truncate pi :: Integral b => b
+    3 :: Integral b => b
 • round 3.5
+    round 3.5 :: Integral b => b
+    4 :: Integral b => b
 • round 3.4
+    round 3.4 :: Integral b => b
+    3 :: Integral b => b
 • floor 3.7
+    floor 3.7 :: Integral b => b
+    3 :: Integral b => b
 • ceiling 3.3
+    ceiling 3.3 :: Integral b => b
+    4 :: Integral b => b
