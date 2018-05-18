@@ -1,4 +1,7 @@
 What are the types of the following expressions? 
 • False
+    False :: Bool
 • (["foo", "bar"], 'a')
+    (["foo", "bar"], 'a') :: ([[Char]], Char)
 • [(True, []), (False, [['a']])]
+    [(True, []), (False, [['a']])] :: [(Bool, [[Char]])]
