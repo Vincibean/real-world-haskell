@@ -1,0 +1,4 @@
+What are the types of the following expressions? 
+• False
+• (["foo", "bar"], 'a')
+• [(True, []), (False, [['a']])]
