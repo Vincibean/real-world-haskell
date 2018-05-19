@@ -1,3 +1,7 @@
-Haskell provides a standard function, last :: [a] -> a, that returns the last ele- ment of a list. 
-From reading the type alone, what are the possible valid behaviors (omitting crashes and infinite loops) that this function 
-could have? What are a few things that this function clearly cannot do?
+Haskell provides a standard function, last :: [a] -> a, that returns the last element of a list. 
+From reading the type alone, what are the possible valid behaviors (omitting crashes and infinite loops) that this function could have? What are a few things that this function clearly cannot do?
+
+Given a list of some type a, it will return a single element. 
+Omitting crashes and infinite loops, the returned value could be any value contained in the list (the first? The last? The second to last?)
+On the other hand, the function definitiely doesn't return a pair (tuple), or a list, or a sublist, etc...
+The signature doesn't allow us to understand how the failure is handled (i.e. what happens if the last element of an empty list is asked?) 
