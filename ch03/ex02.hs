@@ -1,0 +1,2 @@
+-- Define a tree type that has only one constructor, like our Java example. 
+-- Instead of the Empty constructor, use the Maybe type to refer to a node’s children.
