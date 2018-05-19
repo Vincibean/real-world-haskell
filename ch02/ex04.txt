@@ -1,2 +1,10 @@
 Load your lastButOne function into ghci and try it out on lists of different lengths. 
 What happens when you pass it a list that’s too short?
+
+For lastButOne', lastButOne'' and lastButOne''': the following exception is thrown
+
+*** Exception: Prelude.last: empty list
+
+For lastButOne: the following exception is thrown
+
+*** Exception: ex03.hs:(3,1)-(4,34): Non-exhaustive patterns in function lastButOne
