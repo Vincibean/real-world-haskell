@@ -1,0 +1,3 @@
+Haskell provides a standard function, last :: [a] -> a, that returns the last ele- ment of a list. 
+From reading the type alone, what are the possible valid behaviors (omitting crashes and infinite loops) that this function 
+could have? What are a few things that this function clearly cannot do?
