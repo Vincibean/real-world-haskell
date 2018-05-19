@@ -1,0 +1,2 @@
+Load your lastButOne function into ghci and try it out on lists of different lengths. 
+What happens when you pass it a list that’s too short?
