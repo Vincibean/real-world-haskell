@@ -3,4 +3,5 @@ import Data.List
 -- (You may want to look at the sortBy function from the Data.List module.)
 
 sortBySublistLength :: [[a]] -> [[a]]
-sortBySublistLength = sortBy (\a b -> compare (length a) (length b))
+sortBySublistLength = sortBy compareByLength
+  where compareByLength a b = compare (length a) (length b)
