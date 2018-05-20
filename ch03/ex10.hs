@@ -10,3 +10,9 @@
 --   "foo"
 --   ghci> intersperse ',' ["foo","bar","baz","quux"] 
 --   "foo,bar,baz,quux"
+
+intersperse :: a -> [[a]] -> [a]
+intersperse s xs = intersperseAcc [] xs
+  where intersperseAcc acc [] = acc
+        intersperseAcc [] (h:t) = intersperseAcc h t
+        intersperseAcc acc (h:t) = intersperseAcc (acc ++ [s] ++ h) t
