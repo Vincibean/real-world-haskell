@@ -1,0 +1,8 @@
+-- Your function should behave as follows:
+-- 
+--   ghci> asInt_fold "101"
+--   101
+--   ghci> asInt_fold "-31337"
+--   -31337
+--   ghci> asInt_fold "1798"
+--   1798
