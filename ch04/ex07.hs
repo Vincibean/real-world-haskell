@@ -1,0 +1,12 @@
+-- Extend your function to handle the following kinds of exceptional conditions by calling error:
+--
+--    ghci> asInt_fold ""
+--    0
+--    ghci> asInt_fold "-"
+--    0
+--    ghci> asInt_fold "-3"
+--    -3
+--    ghci> asInt_fold "2.7"
+--    *** Exception: Char.digitToInt: not a digit '.'
+--    ghci> asInt_fold "314159265358979323846"
+--    564616105916946374
