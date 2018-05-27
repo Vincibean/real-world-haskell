@@ -15,4 +15,7 @@ main = mainWith myFunction
             _ -> putStrLn "error: exactly two arguments needed"
 
         -- replace "id" with the name of our function below
-        myFunction = id
+        myFunction s = unlines (map (safeHead . words) (lines s))
+          where safeHead ws = if null ws
+                              then ""
+                              else head ws
