@@ -1,4 +1,5 @@
 import System.Environment (getArgs)
+import Data.List
 
 -- Write a program that transposes the text in a file. For instance, it should convert "hello\nworld\n" to "hw\neo\nlr\nll\nod\n".
 
@@ -13,4 +14,4 @@ main = mainWith myFunction
             [input,output] -> interactWith function input output
             _ -> putStrLn "error: exactly two arguments needed"
 
-        myFunction = id
+        myFunction = unlines . transpose . lines
