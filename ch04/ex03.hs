@@ -14,7 +14,6 @@ main = mainWith myFunction
             [input,output] -> interactWith function input output
             _ -> putStrLn "error: exactly two arguments needed"
 
-        -- replace "id" with the name of our function below
         myFunction s = unlines (map (safeHead . words) (lines s))
           where safeHead ws = if null ws
                               then ""
