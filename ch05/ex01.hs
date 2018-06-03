@@ -8,7 +8,6 @@ import PrettyJSON
 -- If it is already wider than this value, it should not add any spaces.
 
 fill :: Int -> Doc -> Doc
-fill width x = if (width `fits` p)
-               then fill (width - 1) (enclose ' ' ' ' x)
-               else x
+fill width x | width `fits` p = fill (width - 1) (enclose ' ' ' ' x)
+             | otherwise = x
                  where p = pretty width x
