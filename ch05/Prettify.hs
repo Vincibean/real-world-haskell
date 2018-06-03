@@ -1,6 +1,6 @@
 module Prettify (
         Doc (..),
-        (<>),
+        (Prettify.<>),
         empty,
         char,
         double,
@@ -11,7 +11,8 @@ module Prettify (
         punctuate,
         text,
         compact,
-        pretty
+        pretty,
+        fits
     ) where
 
 data Doc = Empty
@@ -48,7 +49,7 @@ line = Line
 
 -- Concatinates a list of Docs.
 hcat :: [Doc] -> Doc
-hcat = fold (<>)
+hcat = fold (Prettify.<>)
 
 -- Helper. Fold helper for type safty.
 fold :: (Doc -> Doc -> Doc) -> [Doc] -> Doc
@@ -59,7 +60,7 @@ fsep :: [Doc] -> Doc
 fsep = fold (</>)
 
 (</>) :: Doc -> Doc -> Doc
-x </> y = x <> softline <> y
+x </> y = x Prettify.<> softline Prettify.<> y
 
 -- Helper. Adds a softline break if line gets too long.
 softline :: Doc
@@ -80,7 +81,7 @@ flatten other          = other
 punctuate :: Doc -> [Doc] -> [Doc]
 punctuate _ []     = []
 punctuate _ [d]    = [d]
-punctuate p (d:ds) = (d <> p) : punctuate p ds-- Helper. Encloses a doc between two characters.
+punctuate p (d:ds) = (d Prettify.<> p) : punctuate p ds-- Helper. Encloses a doc between two characters.
 
 compact :: Doc -> String
 compact x = transform [x]

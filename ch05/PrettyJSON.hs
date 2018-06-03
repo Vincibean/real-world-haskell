@@ -1,4 +1,4 @@
-module PrettyJSON (renderJValue) where
+module PrettyJSON (renderJValue, enclose) where
 
 import SimpleJSON(JValue(..))
 import Prettify (Doc, (<>), char, double, fsep,
@@ -18,11 +18,11 @@ renderJValue (JString s)   = string s
 renderJValue (JArray a)    = series '[' ']' renderJValue a
 renderJValue (JObject o)   = series '{' '}' field o
   where field (name,val) = string name
-                          <> text ": "
-                          <> renderJValue val
+                          Prettify.<> text ": "
+                          Prettify.<> renderJValue val
 
 enclose :: Char -> Char -> Doc -> Doc
-enclose left right x = char left <> x <> char right
+enclose left right x = char left Prettify.<> x Prettify.<> char right
 
 hexEscape :: Char -> Doc
 hexEscape c | d < 0x10000 = smallHex d
@@ -31,12 +31,12 @@ hexEscape c | d < 0x10000 = smallHex d
 
 smallHex :: Int -> Doc
 smallHex x  = text "\\u"
-              <> text (replicate (4 - length h) '0')
-              <> text h
+              Prettify.<> text (replicate (4 - length h) '0')
+              Prettify.<> text h
   where h = showHex x ""
 
 astral :: Int -> Doc
-astral n = smallHex (a + 0xd800) <> smallHex (b + 0xdc00)
+astral n = smallHex (a + 0xd800) Prettify.<> smallHex (b + 0xdc00)
   where a = (n `shiftR` 10) .&. 0x3ff
         b = n .&. 0x3ff
 
