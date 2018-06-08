@@ -1,0 +1,1 @@
+Load the Control.Arrow module into ghci and find out what the second function does.
