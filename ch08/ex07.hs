@@ -1,0 +1,5 @@
+-- Modify the type signature of namesMatching so that it encodes the possibility of a bad pattern, 
+-- and make it use your rewritten globToRegex function.
+-- 
+-- You may find the amount of work involved to be surprisingly large. 
+-- Don’t worry; we will introduce more concise and sophisticated ways of dealing with errors in later chapters.
