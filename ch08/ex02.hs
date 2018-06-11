@@ -1,0 +1,2 @@
+-- While filesystems on Unix are usually case-sensitive (e.g., “G” vs. “g”) in filenames, Windows filesystems are not. 
+-- Add a parameter to the globToRegex and matchesGlob functions that allows control over case sensitive matching.
