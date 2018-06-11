@@ -1,0 +1,2 @@
+-- If you’re on a Unix-like system, look through the documentation for the System.Posix.Files module, 
+-- and see if you can find a replacement for the doesNameExist function.
