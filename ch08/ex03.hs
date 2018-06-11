@@ -1,0 +1,6 @@
+-- Although we’ve gone to some lengths to write a portable namesMatching function, 
+-- the function uses our case sensitive globToRegex function. 
+-- Find a way to modify namesMatching to be case-sensitive on Unix, and case insensitive on Windows, 
+-- without modifying its type signature. 
+-- (Hint: consider reading the documentation for System.FilePath to look for a variable that tells us 
+-- whether we’re running on a Unix-like system or on Windows.)
