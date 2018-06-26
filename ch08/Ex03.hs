@@ -5,6 +5,8 @@
 -- (Hint: consider reading the documentation for System.FilePath to look for a variable that tells us 
 -- whether we’re running on a Unix-like system or on Windows.)
 
+module Ex03 where
+
 import System.Directory (
         doesDirectoryExist,
         doesFileExist,
