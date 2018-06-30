@@ -1,5 +1,7 @@
 -- Write a version of globToRegex that uses the type signature shown earlier.
 
+module Ex06 where
+
 import Data.Char
 import Text.Regex.Posix ((=~))
 
@@ -9,6 +11,11 @@ type GlobError = String
 --  beginning and end of the line
 globToRegex :: String -> Either GlobError String
 globToRegex globex = fmap ('^' : ) (globToRegex' $ globex ++ "$")
+
+-- |Checks if a filename matches a glob pattern by converting that glob pattern
+--  to a regular expression and matching using that.
+matchesGlob :: FilePath -> String -> Either GlobError Bool
+name `matchesGlob` pattern = fmap (name =~) (globToRegex pattern)
 
 -- |Internal
 --  Find glob specific characters, and convert them to regex specific
