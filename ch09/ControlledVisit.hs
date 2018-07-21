@@ -9,13 +9,14 @@ import Control.Monad (liftM, forM)
 import System.Directory (Permissions(..), getDirectoryContents, getModificationTime, getPermissions)
 import System.FilePath ((</>))
 import System.IO (IOMode(..), hFileSize, withFile)
-import System.Time (ClockTime(..))
+import Data.Time.Clock (UTCTime)
+import Prelude hiding (traverse) 
 
 data Info = Info
           { infoPath :: FilePath
           , infoPerms :: Maybe Permissions
           , infoSize :: Maybe Integer
-          , infoModTime :: Maybe ClockTime
+          , infoModTime :: Maybe UTCTime
           } deriving (Eq, Ord, Show)
 
 getInfo :: FilePath -> IO Info
