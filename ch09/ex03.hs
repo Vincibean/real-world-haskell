@@ -11,7 +11,7 @@ postOrder = reverse
 postOrder' :: [Info] -> [Info]
 postOrder' = sortBy $ flip $ comparing infoSize
 
--- Assumes that the parent directory will always be names "." and as such will be places after its content.
+-- Assume that the parent directory will always be names "." and as such will be places after its content.
 postOrder'' :: [Info] -> [Info]
 postOrder'' = sortBy $ flip $ comparing infoPath
 
