@@ -5,4 +5,4 @@
 -- Write your own definition of concat using foldr
 
 concat' :: [[a]] -> [a]
-concat' = foldr (\el acc -> el ++ acc) []
+concat' = foldr (++) []
